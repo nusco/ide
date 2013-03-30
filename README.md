@@ -1,10 +1,10 @@
-# Ide
+## Ide
 
-Ide (Injector of Dependencies for the Enterprise) is a Dependency Injection framework written in Ruby and released on April 1st, 2013.
+[Ide](http://en.wikipedia.org/wiki/Ide_%28fish%29) (Injector of Dependencies for the Enterprise) is a [Dependency Injection](en.wikipedia.org/wiki/Dependency_injection) framework written in Ruby and released on April 1st, 2013.
 
-The selling point of Ide when compared to the many other Dependency Injection frameworks is its extreme terseness: the entire framework is only one line of code.
+The selling point of Ide when compared to the [many](http://en.wikipedia.org/wiki/Spring_Framework) [other](http://www.ninject.org/) [Dependency](http://square.github.com/dagger/) [Injection](http://code.google.com/p/google-guice/) [frameworks](http://picocontainer.codehaus.org/) is its extreme terseness: the entire framework is only [one line of code](https://github.com/nusco/ide/blob/master/ide.rb).
 
-## Features
+# Features
 
 * Runtime dependency resolution
 * Externalized configuration
@@ -13,20 +13,20 @@ The selling point of Ide when compared to the many other Dependency Injection fr
 * Written in Pure Ruby
 * Very lightweight source code
 
-## How to use Ide
+# How to use Ide
 
-To install, copy the *ide.rb* file into your project.
+To install, copy the [*ide.rb*](https://github.com/nusco/ide/blob/master/ide.rb) file into your project.
 
 Now, assume that you have a class that depends on other classes. For example, this *WeatherScraper* depends on *WeatherService* and *Database*:
 
-    class *WeatherService*
+    class WeatherService
       def initialize
         @weather_service = WeatherService.new("http://onlineweatherforthemasses.com")
         @database = Database.new
       end
     
       # a lot of code
-   end
+    end
 
 When you run with the "testing" configuration, you'd like *WeatherScraper* to use two specific implementations of *WeatherService* and *Database*, called *MockWeatherService* and *TestDatabase*. To define dependencies, create a file named *dependencies_testing* that contains this configuration code:
 
@@ -38,13 +38,13 @@ At the beginning of your program, load the framework and initialize dependencies
     require 'ide'
     load_dependencies('testing')
   
-Now the WeatherService class will use the dependencies you defined. If you want another configuration (say, "production"), you can write a file named dependencies_production:
+Now the WeatherService class will use the dependencies you defined. If you want another configuration (say, "production"), you can write a file named *dependencies_production*:
 
     WeatherService = OnlineWeatherService
     Database       = BigAssDatabase
 
 
-## Customizing Your Object Factories
+# Customizing Your Object Factories
 
 In some complex use cases, you might want to customize your object factories (also known as "classes"). You can do that by overriding their new() method, like this:
 
