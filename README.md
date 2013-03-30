@@ -1,6 +1,6 @@
 ## Ide
 
-[Ide](http://en.wikipedia.org/wiki/Ide_%28fish%29) (Injector of Dependencies for the Enterprise) is a [Dependency Injection](en.wikipedia.org/wiki/Dependency_injection) framework written in Ruby and released on April 1st, 2013.
+Ide (Injector of Dependencies for the Enterprise) is a [Dependency Injection](en.wikipedia.org/wiki/Dependency_injection) framework written in Ruby and released on April 1st, 2013.
 
 The selling point of Ide when compared to the [many](http://en.wikipedia.org/wiki/Spring_Framework) [other](http://www.ninject.org/) [Dependency](http://square.github.com/dagger/) [Injection](http://code.google.com/p/google-guice/) [frameworks](http://picocontainer.codehaus.org/) is its extreme terseness: the entire framework is only [one line of code](https://github.com/nusco/ide/blob/master/ide.rb).
 
@@ -19,7 +19,7 @@ To install, copy the [*ide.rb*](https://github.com/nusco/ide/blob/master/ide.rb)
 
 Now, assume that you have a class that depends on other classes. For example, this *WeatherScraper* depends on *WeatherService* and *Database*:
 
-    class WeatherService
+    class WeatherScraper
       def initialize
         @weather_service = WeatherService.new("http://onlineweatherforthemasses.com")
         @database = Database.new
@@ -43,7 +43,6 @@ Now the *WeatherService* class will use the dependencies you defined. If you wan
     WeatherService = RealOnlineWeatherService
     Database       = BigAssDatabase
 
-
 # Customizing Your Object Factories
 
 In some complex use cases, you might want to customize your object factories (also known as "classes"). You can do that by overriding their *new()* method, like this:
@@ -53,3 +52,5 @@ In some complex use cases, you might want to customize your object factories (al
         # apply complex logic to create an object and return it
       end
     end
+
+Enjoy [Ide](http://en.wikipedia.org/wiki/Ide_%28fish%29)!
