@@ -1,0 +1,4 @@
+# This is a dependencies configuration file.
+
+WeatherService = MockWeatherService
+Database       = TestDatabase
