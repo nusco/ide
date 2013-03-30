@@ -10,8 +10,8 @@ The selling point of Ide when compared to the [many](http://en.wikipedia.org/wik
 * Externalized configuration
 * Customizable instance factories ("classes")
 * Enterprise-level robustness
-* Written in Pure Ruby
 * Very lightweight source code
+* Written in Pure Ruby
 
 # How to use Ide
 
@@ -38,15 +38,15 @@ At the beginning of your program, load the framework and initialize dependencies
     require 'ide'
     load_dependencies('testing')
   
-Now the WeatherService class will use the dependencies you defined. If you want another configuration (say, "production"), you can write a file named *dependencies_production*:
+Now the *WeatherService* class will use the dependencies you defined. If you want another configuration (say, "production"), you can write a file named *dependencies_production*:
 
-    WeatherService = OnlineWeatherService
+    WeatherService = RealOnlineWeatherService
     Database       = BigAssDatabase
 
 
 # Customizing Your Object Factories
 
-In some complex use cases, you might want to customize your object factories (also known as "classes"). You can do that by overriding their new() method, like this:
+In some complex use cases, you might want to customize your object factories (also known as "classes"). You can do that by overriding their *new()* method, like this:
 
     class WeatherService
       def self.new(arguments)
