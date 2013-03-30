@@ -1,6 +1,6 @@
 ## Ide
 
-Ide (Injector of Dependencies for the Enterprise) is a [Dependency Injection](en.wikipedia.org/wiki/Dependency_injection) framework written in Ruby and released on April 1st, 2013.
+Ide (Injector of Dependencies for the Enterprise) is a revolutionary new [Dependency Injection](en.wikipedia.org/wiki/Dependency_injection) framework.
 
 The selling point of Ide when compared to the [many](http://en.wikipedia.org/wiki/Spring_Framework) [other](http://www.ninject.org/) [Dependency](http://square.github.com/dagger/) [Injection](http://code.google.com/p/google-guice/) [frameworks](http://picocontainer.codehaus.org/) is its extreme terseness: the entire framework is only [one line of code](https://github.com/nusco/ide/blob/master/ide.rb).
 
