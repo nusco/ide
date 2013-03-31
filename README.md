@@ -21,7 +21,7 @@ Now, assume that you have a class that depends on other classes. For example, th
 
     class WeatherScraper
       def initialize
-        @weather_service = WeatherService.new("http://onlineweatherforthemasses.com")
+        @weather_service = WeatherService.new("http://onlineweatherforall.com")
         @database = Database.new
       end
     
