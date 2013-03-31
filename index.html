@@ -53,9 +53,9 @@
 <h1>Features</h1>
 
 <ul>
-<li>Runtime dependency resolution</li>
 <li>Externalized configuration</li>
-<li>Customizable instance factories ("classes")</li>
+<li>Programmable Dependency Resolution</li>
+<li>Instance factories ("classes")</li>
 <li>Enterprise-level robustness</li>
 <li>Very lightweight source code</li>
 <li>Written in Pure Ruby</li>
@@ -93,13 +93,17 @@ load_dependencies('testing')
 Database       = BigAssDatabase
 </code></pre>
 
-<h1>Customizing Your Object Factories</h1>
+<h1>Programmable Dependency Resolution</h1>
 
-<p>In some complex use cases, you might want to customize your object factories (also known as "classes"). You can do that by overriding their <em>new()</em> method, like this:</p>
+<p>In some cases, defining your dependencies in a static file is not enough - you want to apply programmatic logic to decide which concrete implementation to depend upon. With another Dependency Injection framework, this could prove hard. In Ide, you can customize your object factories (also known as "classes") by overriding their <em>new()</em> method:</p>
 
 <pre><code>class WeatherService
-  def self.new(arguments)
-    # apply complex logic to create an object and return it
+  def self.new()
+    if some_complex_rule()
+      return some_concrete_implementation
+    else
+      return some_other_concrete_implementation
+    end
   end
 end
 </code></pre>
