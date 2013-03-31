@@ -47,14 +47,14 @@ Now the *WeatherService* class will use the dependencies you defined. If you wan
 
 In some cases, defining your dependencies in a static file is not enough - you want to apply programmatic logic to decide which concrete implementation to depend upon. With another Dependency Injection framework, this could prove hard. In Ide, you can customize your object factories (also known as "classes") by overriding their *new()* method:
 
-    class WeatherService
+    class TestDatabase
       def self.new()
-        if some_complex_rule()
-          return some_concrete_implementation
+        if functional_testing()
+          return in_memory_database()
         else
-          return some_other_concrete_implementation
+          return mock_database()
         end
       end
     end
 
-Enjoy [Ide](http://en.wikipedia.org/wiki/Ide_%28fish%29)!
+[Enjoy Ide](http://en.wikipedia.org/wiki/Ide_%28fish%29)!
