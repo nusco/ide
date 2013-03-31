@@ -48,7 +48,7 @@
       <section id="main_content">
         <p>Ide (Injector of Dependencies for the Enterprise) is a revolutionary new <a href="en.wikipedia.org/wiki/Dependency_injection">Dependency Injection</a> framework.</p>
 
-<p>The selling point of Ide when compared to the <a href="http://en.wikipedia.org/wiki/Spring_Framework">many</a> <a href="http://www.ninject.org/">other</a> <a href="http://square.github.com/dagger/">Dependency</a> <a href="http://code.google.com/p/google-guice/">Injection</a> <a href="http://picocontainer.codehaus.org/">frameworks</a> is its extreme terseness: the entire framework is only <a href="https://github.com/nusco/ide/blob/master/ide.rb">one line of code</a>.</p>
+<p>Compared to the <a href="http://en.wikipedia.org/wiki/Spring_Framework">many</a> <a href="http://www.ninject.org/">other</a> <a href="http://square.github.com/dagger/">Dependency</a> <a href="http://code.google.com/p/google-guice/">Injection</a> <a href="http://picocontainer.codehaus.org/">frameworks</a>, Ide is extremely terse: the entire framework is only <a href="https://github.com/nusco/ide/blob/master/ide.rb">one line of code</a>.</p>
 
 <h1>Features</h1>
 
@@ -97,18 +97,18 @@ Database       = BigAssDatabase
 
 <p>In some cases, defining your dependencies in a static file is not enough - you want to apply programmatic logic to decide which concrete implementation to depend upon. With another Dependency Injection framework, this could prove hard. In Ide, you can customize your object factories (also known as "classes") by overriding their <em>new()</em> method:</p>
 
-<pre><code>class WeatherService
+<pre><code>class TestDatabase
   def self.new()
-    if some_complex_rule()
-      return some_concrete_implementation
+    if functional_testing()
+      return in_memory_database
     else
-      return some_other_concrete_implementation
+      return mock_database
     end
   end
 end
 </code></pre>
 
-<p>Enjoy <a href="http://en.wikipedia.org/wiki/Ide_%28fish%29">Ide</a>!</p>
+<p><a href="http://en.wikipedia.org/wiki/Ide_%28fish%29">Enjoy Ide</a>!</p>
       </section>
 
       <footer>
