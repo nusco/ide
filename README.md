@@ -2,13 +2,13 @@
 
 Ide (Injector of Dependencies for the Enterprise) is a revolutionary new [Dependency Injection](en.wikipedia.org/wiki/Dependency_injection) framework.
 
-The selling point of Ide when compared to the [many](http://en.wikipedia.org/wiki/Spring_Framework) [other](http://www.ninject.org/) [Dependency](http://square.github.com/dagger/) [Injection](http://code.google.com/p/google-guice/) [frameworks](http://picocontainer.codehaus.org/) is its extreme terseness: the entire framework is only [one line of code](https://github.com/nusco/ide/blob/master/ide.rb).
+Compared to the [many](http://en.wikipedia.org/wiki/Spring_Framework) [other](http://www.ninject.org/) [Dependency](http://square.github.com/dagger/) [Injection](http://code.google.com/p/google-guice/) [frameworks](http://picocontainer.codehaus.org/), Ide is extremely terse: the entire framework is only [one line of code](https://github.com/nusco/ide/blob/master/ide.rb).
 
 # Features
 
-* Runtime dependency resolution
 * Externalized configuration
-* Customizable instance factories ("classes")
+* Programmable Dependency Resolution
+* Instance factories ("classes")
 * Enterprise-level robustness
 * Very lightweight source code
 * Written in Pure Ruby
@@ -43,13 +43,17 @@ Now the *WeatherService* class will use the dependencies you defined. If you wan
     WeatherService = RealOnlineWeatherService
     Database       = BigAssDatabase
 
-# Customizing Your Object Factories
+# Programmable Dependency Resolution
 
-In some complex use cases, you might want to customize your object factories (also known as "classes"). You can do that by overriding their *new()* method, like this:
+In some cases, defining your dependencies in a static file is not enough - you want to apply programmatic logic to decide which concrete implementation to depend upon. With another Dependency Injection framework, this could prove hard. In Ide, you can customize your object factories (also known as "classes") by overriding their *new()* method:
 
     class WeatherService
-      def self.new(arguments)
-        # apply complex logic to create an object and return it
+      def self.new()
+        if some_complex_rule()
+          return some_concrete_implementation
+        else
+          return some_other_concrete_implementation
+        end
       end
     end
 
