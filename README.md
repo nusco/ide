@@ -1,6 +1,6 @@
 ## Ide
 
-Ide (Injector of Dependencies for the Enterprise) is a revolutionary new [Dependency Injection](en.wikipedia.org/wiki/Dependency_injection) framework.
+Ide (Injector of Dependencies for the Enterprise) is a revolutionary new [Dependency Injection](http://en.wikipedia.org/wiki/Dependency_injection) framework.
 
 Compared to the [many](http://en.wikipedia.org/wiki/Spring_Framework) [other](http://www.ninject.org/) [Dependency](http://square.github.com/dagger/) [Injection](http://code.google.com/p/google-guice/) [frameworks](http://picocontainer.codehaus.org/), Ide is extremely terse: the entire framework is only [one line of code](https://github.com/nusco/ide/blob/master/ide.rb).
 
@@ -15,7 +15,7 @@ Compared to the [many](http://en.wikipedia.org/wiki/Spring_Framework) [other](ht
 
 # How to use Ide
 
-To install, copy the [*ide.rb*](https://github.com/nusco/ide/blob/master/ide.rb) file into your project.
+To install, copy the [*ide.rb*](ide.rb) file into your project.
 
 Now, assume that you have a class that depends on other classes. For example, this *WeatherScraper* depends on *WeatherService* and *Database*:
 
@@ -57,4 +57,4 @@ In some cases, defining your dependencies in a static file is not enough - you w
       end
     end
 
-IDE was initially released on April 1st, 2013. [Enjoy!](http://en.wikipedia.org/wiki/Ide_%28fish%29)!
+IDE was initially released on April 1st, 2013. [Enjoy!](http://en.wikipedia.org/wiki/Ide_%28fish%29)
