@@ -57,4 +57,4 @@ In some cases, defining your dependencies in a static file is not enough - you w
       end
     end
 
-[Enjoy Ide](http://en.wikipedia.org/wiki/Ide_%28fish%29)!
+IDE was initially released on April 1st, 2013. [Enjoy!](http://en.wikipedia.org/wiki/Ide_%28fish%29)!
